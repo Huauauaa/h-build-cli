@@ -1,8 +1,8 @@
 {
   "name": "@harvey0379/h-build-cli",
-  "version": "1.0.7",
+  "version": "1.0.11",
   "type": "module",
-  "description": "",
+  "description": "a generator",
   "main": "index.js",
   "bin": {
     "h-build": "./bin/h-build.js"
@@ -12,6 +12,10 @@
   },
   "author": "Harvey",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Huauauaa/h-build-cli.git"
+  },
   "dependencies": {
     "chalk": "^5.0.0",
     "commander": "^8.3.0",
