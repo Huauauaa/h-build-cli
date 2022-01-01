@@ -1,0 +1,21 @@
+{
+  "name": "@harvey0379/h-build-cli",
+  "version": "1.0.7",
+  "type": "module",
+  "description": "",
+  "main": "index.js",
+  "bin": {
+    "h-build": "./bin/h-build.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Harvey",
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "^5.0.0",
+    "commander": "^8.3.0",
+    "download-git-repo": "^3.0.2",
+    "ora": "^6.0.1"
+  }
+}
