@@ -9,16 +9,29 @@ import fs from 'fs';
 program
   .version('0.1.0')
   .option('-i, --init <name>', 'init h-build')
+  .option('-t, --type <name>', 'init h-build')
   .parse(process.argv);
 
 const options = program.opts();
 const appName = options.init;
+const type = options.type;
 
-console.log({ appName });
+let repo;
+switch (type) {
+  case 'react':
+    repo = 'vite-react-antd-starter';
+    break;
+  case 'flask':
+    repo = 'flask_starter';
+    break;
+  default:
+    repo = 'h-build-cli';
+}
 
 if (appName) {
-  const spinner = ora('download h-build from github').start();
-  download('Huauauaa/h-build-cli#main', appName, (err) => {
+  console.info(chalk.blueBright(`${appName} is coming...`));
+  const spinner = ora(`download ${repo} from github`).start();
+  download(`Huauauaa/${repo}#main`, appName, (err) => {
     if (err) {
       console.error(err);
       return;
@@ -35,6 +48,8 @@ if (appName) {
       const str = JSON.stringify(_data, null, 4);
       fs.writeFile(packagePath, str, (err) => {
         if (err) throw err;
+        console.info(chalk.greenBright(`cd ${appName}`));
+        process.exit();
       });
     });
   });
